@@ -6,7 +6,7 @@ public class ExerciciosOracleFundamentals {
         public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Selecione um metodo:");
-        System.out.println("conta, planeta, aluno, exame, decode"); //lista de metodos
+        System.out.println("conta, planeta, aluno, exame, decode, array"); //lista de metodos
         switch (in.next()) {    //entrada
             case "conta":   //chamada de metodos
                 conta();
@@ -22,6 +22,9 @@ public class ExerciciosOracleFundamentals {
                 break;
             case "decode":
                 decode();
+                break;
+            case "array":
+                array();
                 break;
             default:
             System.out.println("Invalido");
@@ -184,5 +187,26 @@ public class ExerciciosOracleFundamentals {
         }
         in.close();
 
+    }
+
+    public static void array(){     // Array
+        Scanner in = new Scanner(System.in);
+        System.out.println("Quantidade no array");
+        int Q = in.nextInt(); // Entrada de quantidade
+        String[] texto = new String[Q];
+        for (int i = 0; i<Q; i++){      // Entrada de texto
+            System.out.println("Digite o texto ("+(i+1)+")");
+            texto[i] = in.next();
+        }
+        System.out.println("Contéudo da array: ");
+        for (int i = 0; i<Q; i++){      // Saida
+            if(i==Q-1){     // If para que a ultima saida não tenha uma virgula ao final e sim um ponto.
+                System.out.print("["+i+"]"+texto[i]+".");
+            }
+            else{
+                System.out.print("["+i+"]"+texto[i]+", "); 
+            }
+        }
+        in.close();
     }
 }

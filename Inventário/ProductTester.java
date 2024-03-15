@@ -19,14 +19,14 @@ public class ProductTester {
         System.out.println("Digite o preço do produto");
         tempPrice = in.nextFloat();
         Produto p1 = new Produto(tempNumber, tempName, tempQty, tempPrice);
-        /*System.out.println("Digite o numero do segundo produto");
+        System.out.println("Digite o numero do segundo produto");
         tempNumber = in.nextInt();
         System.out.println("Digite o nome do segundo produto");
         tempName = in.next();
         System.out.println("Digite a quantidade do segundo produto");
         tempQty = in.nextInt();
         System.out.println("Digite o preço do segundo produto");
-        tempPrice = in.nextFloat();*/
+        tempPrice = in.nextFloat();
         Produto p2 = new Produto(tempNumber, tempName, tempQty, tempPrice);
         Produto p3 = new Produto();
         Produto p4 = new Produto(3, "Produto 3", 30, 300);
