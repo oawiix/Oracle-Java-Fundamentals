@@ -20,7 +20,7 @@ public class TestVehicle {
         System.out.println(
         "Vehicle number " + vehicle3.getChassisNo() 
         + " is a " + vehicle3.getModel() + " model"
-        + " and has an engine capacity of " + vehicle3.getCapacity() + "cc"
+        + " and has an engine capacity of " + Vehicle.Engine.getCapacity() + "cc"
         );
 
     }
