@@ -60,8 +60,7 @@ public class Produto {
         + " \nQuantidade em estoque = " + estoque 
         + " \nPreço = " + preco 
         + " \nValor do estoque = " + getInventoryValue() 
-        + " \nStatus = " + a 
-        +"\n---------------------";
+        + " \nStatus = " + a;
     }
 
 

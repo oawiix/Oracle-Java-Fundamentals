@@ -5,10 +5,6 @@ import java.util.Scanner;
 public class ProductTester2 {
     int t;
     public static void main(String[] args) {
-        int tempNumber;
-        String tempName;
-        int tempQty;
-        float tempPrice;
         int maxSize=-1;
         Scanner in = new Scanner(System.in);
         while (maxSize < 0){
@@ -24,27 +20,47 @@ public class ProductTester2 {
         }
         int qtd = maxSize;
         Produto[] po = new Produto[qtd];
-        for (int i = 0; i < qtd; i++) {
+        addToInventory(po); // método retorna um array de objetos Produto
+        displayInventory(po, maxSize);
+        getNumProducts(maxSize);
+    }
+        in.close();
+}
+
+
+
+
+
+    static void addToInventory(Produto[] po) // metodo para adicionar produtos
+    {
+        Scanner in = new Scanner(System.in);
+        for (int i = 0; i < po.length; i++) {
             System.out.println("Digite o numero do produto "+"["+(i+1)+"]");
-            tempNumber = in.nextInt();
+            int tempNumber = in.nextInt();
             System.out.println("Digite o nome do produto "+"["+(i+1)+"]");
-            tempName = in.next();
+            String tempName = in.next();
             System.out.println("Digite a quantidade do produto "+"["+(i+1)+"]");
-            tempQty = in.nextInt();
+            int tempQty = in.nextInt();
             System.out.println("Digite o preço do produto "+"["+(i+1)+"]");
-            tempPrice = in.nextFloat();
+            float tempPrice = in.nextFloat();
             po[i] = new Produto(tempNumber, tempName, tempQty, tempPrice);
-        }
-        if(maxSize == 0){
-            System.out.println("Nenhum produto cadastrado.");
-        }
-        else{
-            for (int i = 0; i <= po.length-1; i++) {
-                System.out.println(po[i].toString());
-            }
-        
         }
         in.close();
     }
-}
+    static void displayInventory(Produto[] po, int maxSize) // metodo para mostrar os produtos
+    {
+        if(maxSize == 0){
+            System.out.println("Nenhum produto cadastrado.");
+        }
+        for (int i = 0; i < po.length; i++) {
+            System.out.println(po[i].toString());
+        }
+    }
+    static void getNumProducts(int maxSize){
+        System.out.println(
+        "---------------------"
+        +"\nNúmero de produtos cadastrados: "
+        +maxSize
+        +"\n---------------------");
+    }
 }
