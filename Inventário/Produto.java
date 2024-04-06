@@ -62,6 +62,12 @@ public class Produto {
         + " \nValor do estoque = " + getInventoryValue() 
         + " \nStatus = " + a;
     }
+    public void addEstoque(int estoque){
+        this.estoque += estoque;
+    }
+    public void deductEstoque(int estoque){
+        this.estoque -= estoque;
+    }
 
 
 }

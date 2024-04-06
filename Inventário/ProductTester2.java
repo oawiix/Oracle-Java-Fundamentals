@@ -23,7 +23,46 @@ public class ProductTester2 {
         addToInventory(po); // método retorna um array de objetos Produto
         displayInventory(po, maxSize);
         getNumProducts(maxSize);
-    }
+        char option = '0';
+        do
+        {
+            System.out.println(
+                "---------------------"
+                +"\nDigite a opção desejada:"
+                +"\n1 - Exibir inventário"
+                +"\n2 - Adicionar estoque"
+                +"\n3 - Deduzir estoque"
+                +"\n4 - Descontinuar produto"
+                +"\n0 - Sair"
+                +"\n Escolha uma opção: "
+                +"\n---------------------");
+                switch (option){
+                    case '1':
+                        System.out.println("Exibir inventário");
+                        displayInventory(po, maxSize);
+                        break;
+                    case '2':
+                        System.out.println("Adicionar estoque, digite o numero do produto: ");
+                        int num = in.nextInt();
+                        int qty = in.nextInt();
+                        po[num].addEstoque(qty);
+                        break;
+                    case '3':
+                        System.out.println("Deduzir estoque");
+                        break;
+                    case '4':
+                        System.out.println("Descontinuar produto");
+                        break;
+                    case '5':
+                        System.out.println("Sair");
+                        break;
+                    default:
+                        System.out.println("Opção inválida");
+                        break;
+                }
+        }
+            while(option != '0');
+}
         in.close();
 }
 
@@ -63,4 +102,5 @@ public class ProductTester2 {
         +maxSize
         +"\n---------------------");
     }
+
 }
